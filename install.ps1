@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
-$GooseFolder = $env:QUARK
+$GooseFolder = $env:GOOSE
 $BinDir = if ($GooseFolder) {
   "$GooseFolder"
 } else {
@@ -54,7 +54,7 @@ $Path = [Environment]::GetEnvironmentVariable('Path', $User)
 if (!(";$Path;".ToLower() -like "*;$BinDir;*".ToLower())) {
   [Environment]::SetEnvironmentVariable('Path', "$Path;$BinDir", $User)
   $Env:Path += ";$BinDir"
-  [Environment]::SetEnvironmentVariable('QUARK', "$BinDir", $User)
+  [Environment]::SetEnvironmentVariable('GOOSE', "$BinDir", $User)
 }
 
 Write-Output "Goose was installed successfully to $GooseExe"

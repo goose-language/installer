@@ -12,20 +12,20 @@ then
   then
     GETTER=curl
   else
-    echo "$ERROR: Curl or Wget is required to install the latest Quark release."
+    echo "$ERROR: Curl or Wget is required to install the latest Goose release."
     exit 1
   fi
 fi
 
 if ! command -v unzip &> /dev/null
 then
-  echo "$ERROR: Unzip is required to install the latest Quark release."
+  echo "$ERROR: Unzip is required to install the latest Goose release."
   exit 1
 fi
 
 if ! command -v gcc &> /dev/null && ! command -v clang &> /dev/null
 then
-  echo "$ERROR: A C compiler is required to install the latest Quark release."
+  echo "$ERROR: A C compiler is required to install the latest Goose release."
   exit 1
 fi 
 
@@ -87,21 +87,21 @@ case $SHELL in
 	"bash")
 		BASHRC="${HOME}/.bashrc"
 		echo "* Configuring ${BASHRC}..."
-		echo "export PATH=${INSTALL_FOLDER}:\$PATH" >> $BASHRC
+		echo "\nexport PATH=\"${INSTALL_FOLDER}:\$PATH\"" >> $BASHRC
 		echo "export GOOSE=\"${INSTALL_FOLDER}\"" >> $BASHRC
 		echo "$DONE"
 		;;
 	"zsh")
 		ZSHRC="${HOME}/.zshrc"
 		echo "* Configuring ${ZSHRC}..."
-		echo "export PATH=${INSTALL_FOLDER}:\$PATH" >> $ZSHRC
+		echo "\nexport PATH=\"${INSTALL_FOLDER}:\$PATH\"" >> $ZSHRC
 		echo "export GOOSE=\"${INSTALL_FOLDER}\"" >> $ZSHRC
 		echo "$DONE"
 		;;
 	"fish")
 		CONFIG_FISH="${HOME}/.config/fish/config.fish"
 		echo "* Configuring ${CONFIG_FISH}..."
-		echo "set PATH ${INSTALL_FOLDER} \$PATH" >> $CONFIG_FISH
+		echo "\nset PATH ${INSTALL_FOLDER} \$PATH" >> $CONFIG_FISH
 		echo "export GOOSE=\"${INSTALL_FOLDER}\"" >> $CONFIG_FISH
 		echo "$DONE"
 		;;
