@@ -1,4 +1,4 @@
-# Quark installer
+# Goose installer
 
 Selfscript to install Goose on your system.
 It automatically installs the latest weekly release of Goose.
