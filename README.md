@@ -5,7 +5,7 @@ It automatically installs the latest weekly release of Goose.
 
 ### With Bash
 ```
-curl -fsSL https://raw.githubusercontent.com/goose-language/installer/master/install.sh | bash [prefix]
+curl -fsSL https://raw.githubusercontent.com/goose-language/installer/master/install.sh | bash
 ```
 
 ### With PowerShell
